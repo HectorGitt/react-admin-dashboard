@@ -125,7 +125,7 @@ export const tokens = (mode) => ({
 
 //mui theme settings
 
-export const theme = (mode) => {
+export const themeSettings = (mode) => {
     const colors = tokens(mode);
 
     return {
@@ -214,7 +214,7 @@ export const useMode = () => {
         []
     );
 
-    const theme = useMemo(() => theme(mode), [mode]);
-
+    const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+    
     return [theme, colorMode];
 }
